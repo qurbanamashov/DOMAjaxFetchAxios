@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 30%;
+    }
+</style>
+
+<body>
+    <input type="number" id="input1" placeholder="id">
+    <input type="text" id="input2" placeholder="ad">
+    <input type="text" id="input3" placeholder="soyad">
+    <button id="btn">elave et</button>
+    <br><br>
+    <table id="table">
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+    </table>
+
+</body>
+<script>
+    var input1 = document.getElementById("input1")
+    var input2 = document.getElementById("input2")
+    var input3 = document.getElementById("input3")
+    var table = document.getElementById("table")
+    document.getElementById("btn").addEventListener("click", function () {
+        if (input1.value == "") {
+            alert("id daxil edin")
+        }
+         else if (input2.value == "") {
+            alert("adi daxil edin")
+        }
+         else if (input3.value == "") {
+            alert("soyadi daxil edin")
+        }
+        else {
+            var tr = document.createElement("tr")
+            tr.innerHTML = `<th>${input1.value}</th>
+                        <th>${input2.value}</th>
+                        <th>${input3.value}</th>`
+            table.appendChild(tr);
+        }
+    })
+
+</script>
+
+</html>
